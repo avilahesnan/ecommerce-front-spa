@@ -1,0 +1,30 @@
+<!--Listar Produtos -->
+<section class="py-5" style="background-color: #f7d3ad;">
+  <div class="container px-4 px-lg-5 mt-5" >
+    <div id="container-produtos" class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center" >
+
+    </div>
+  </div>
+</section> 
+
+<!-- Bootstrap Toast para Mensagem de Sucesso ao Recuperar Produtos -->
+<div class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToastProduto" style="position: absolute; top: 60px; right: 20px;">
+  <div class="toast-header">
+    <strong class="me-auto">Sucesso</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Produtos Recuperados com Sucesso.
+  </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Erro ao Recuperar Produtos -->
+<div class="toast text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToastProduto" style="position: absolute; top: 60px; right: 20px;">
+  <div class="toast-header">
+    <strong class="me-auto">Erro</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Ocorreu Algum Erro. Produtos Não Recuperados. 
+  </div>
+</div>

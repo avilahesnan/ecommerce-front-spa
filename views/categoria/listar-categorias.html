@@ -1,0 +1,33 @@
+<!--Listar Categorias -->
+<section class="py-4">
+  <div class="container mt-4">
+    <h3 class="fw-bold" style="color: #425862;">
+      Categorias
+    </h3>
+    <div id="container-badges-categorias" class="py-4"></div>
+  </div>
+</section>
+
+<!-- Bootstrap Toast para Mensagem de Sucesso ao Recuperar Categorias -->
+<div class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToastCategoria"
+  style="position: absolute; top: 60px; right: 20px;">
+  <div class="toast-header">
+    <strong class="me-auto">Sucesso</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Categorias Recuperadas com Sucesso.
+  </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Erro ao Recuperar Categorias -->
+<div class="toast text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToastCategoria"
+  style="position: absolute; top: 60px; right: 20px;">
+  <div class="toast-header">
+    <strong class="me-auto">Erro</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Ocorreu Algum Erro. Categorias Não Recuperadas. 
+  </div>
+</div>

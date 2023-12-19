@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>🛒E-Commerce ABC | Simple SPA</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet" />
+       
+  </head>
+  <body style="background-color: #faf7f5;">
+
+    <!-- Barra de Navegação -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="background-color: #425862;" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color:#f4dfc8;" href="#">
+          🛒 <b>E-Commerce ABC</b>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link page" href="/home" data-link>
+                <i class="bi bi-house"> Home</i>
+              </a>
+            </li>           
+            <li class="nav-item dropdown" >
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCatalog"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-file"> Produtos</i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownCatalog" style="background-color: #425862;">
+                <li><a class="dropdown-item" href="/listar-produtos" data-link>  <i class="bi bi-files"> Todos</i></a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="/listar-produtos" data-link> <i class="bi bi-heart"> Mais Vendidos</i></a></li>
+                <li><a class="dropdown-item" href="/listar-produtos" data-link> <i class="bi bi-star""> Novidades</i> </a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page" href="/listar-categorias" data-link>
+                <i class="bi bi-tag"> Categorias</i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link page" href="/contato" data-link>
+                <i class="bi bi-telephone"> Contato</i>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link page" href="/sobre" data-link>
+                <i class="bi bi-patch-question"> Sobre</i>
+              </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/carrinho">
+                <i class="bi bi-cart"></i> Carrinho
+                <span class="badge bg-secondary">0</span> <!-- Esse número deve ser atualizado dinamicamente - Para testes está fixo -->
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link"  id="authLink" href="/login" data-link>
+                <i class="bi bi-lock"></i> Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- Menu das View Seguras -->
+
+    <!-- Conteúdo das Views -->
+    <main id="content-view" style="margin-top:56px"></main>
+
+    <!-- Bootstrap JS Bundle (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Inicialização do SPA -->
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
