@@ -1,0 +1,137 @@
+<!--Gerenciar Categorias -->
+<section class="py-5">
+    <div class="rounded-3 py-5 px-4 px-md-5 mb-5" style="background-color: #f7d3ad;">
+        <div class="row gx-5 justify-content-center">
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <div class="container mt-4">
+                    <h2>Gerenciador de Categorias</h2>
+                    <!-- Form for CRUD operations on category -->
+                    <form id="categoriaForm">
+                        <div class="mb-3 mt-4">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome da Categoria" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Inserir</button>
+                    </form>
+                </div>
+                <div id="categoria-container" class="container mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-lista-categorias">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap Toast para Mensagem de Sucesso ao Recuperar Categorias -->
+<div class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToastCategoria" style="position: absolute; top: 60px; right: 20px;">
+    <div class="toast-header">
+        <strong class="me-auto">Sucesso</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Categorias Recuperadas com Sucesso.
+    </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Erro ao Recuperar Categorias -->
+<div class="toast text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToastCategoria" style="position: absolute; top: 60px; right: 20px;">
+  <div class="toast-header">
+    <strong class="me-auto">Erro</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Ocorreu Algum Erro. Categorias Não Recuperadas.
+  </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Sucesso ao Deletar Categoria -->
+<div class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToastDeletarCategoria" style="position: absolute; top: 60px; right: 20px;">
+    <div class="toast-header">
+        <strong class="me-auto">Sucesso</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Categoria Deletada com Sucesso.
+    </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Erro ao Deletar Categoria -->
+<div class="toast text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToastDeletarCategoria" style="position: absolute; top: 60px; right: 20px;">
+    <div class="toast-header">
+      <strong class="me-auto">Erro</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Ocorreu Algum Erro ao Deletar a Categoria.
+    </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Sucesso ao Atualizar Categoria -->
+<div class="toast text-bg-success" role="alert" aria-live="assertive" aria-atomic="true" id="successToastAtualizarCategoria" style="position: absolute; top: 60px; right: 20px;">
+    <div class="toast-header">
+        <strong class="me-auto">Sucesso</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        Categoria Atualizada com Sucesso.
+    </div>
+</div>
+
+<!-- Bootstrap Toast para Mensagem de Erro ao Atualizar Categoria -->
+<div class="toast text-bg-danger" role="alert" aria-live="assertive" aria-atomic="true" id="errorToastAtualizarCategoria" style="position: absolute; top: 60px; right: 20px;">
+    <div class="toast-header">
+      <strong class="me-auto">Erro</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Ocorreu Algum Erro ao Atualizar a Categoria.
+    </div>
+</div>
+
+<!-- Bootstrap Modal para Mensagem de Confirmação de Deleção de Categoria -->
+<div class="modal" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Deleção</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Deseja realmente deletar essa categoria?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">Deletar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Modal para Dados de Atualização de Categoria -->
+<div class="modal" id="updateModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Atualizar Categoria</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="nomeUpdate" name="nomeUpdate" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="confirmUpdate">Atualizar</button>
+        </div>
+      </div>
+    </div>
+  </div>
