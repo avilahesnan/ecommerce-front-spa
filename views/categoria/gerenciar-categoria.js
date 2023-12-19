@@ -59,10 +59,10 @@ class GerenciarCategoriaView extends View {
         listaCategorias.forEach(categoria => {
             const row = document.createElement('tr');
             row.innerHTML = `<td>${categoria.id}</td>
-                <td>${categoria.nome}</td>
+                <td>${categoria.name}</td>
                 <td class="align-items-center">
                     <button class="btn btn-danger delete-btn" data-id="${categoria.id}">Deletar</button>
-                    <button class="btn btn-primary update-btn" data-id="${categoria.id}" data-nome="${categoria.nome}">Atualizar</button>
+                    <button class="btn btn-primary update-btn" data-id="${categoria.id}" data-nome="${categoria.name}">Atualizar</button>
                 </td>`;
             containerTBodyCategorias.appendChild(row);
         });
@@ -94,7 +94,7 @@ class GerenciarCategoriaView extends View {
         const successToast = new bootstrap.Toast(document.getElementById('successToastCategoria'));
         const errorToast = new bootstrap.Toast(document.getElementById('errorToastCategoria'));
         try {
-            const response = await fetch('http://localhost:3000/api/v1/categorias');
+            const response = await fetch('http://localhost:3000/api/v1/categories');
 
             if (!response.ok) {
                 console.log(response);
@@ -121,7 +121,7 @@ class GerenciarCategoriaView extends View {
             const successToast = new bootstrap.Toast(document.getElementById('successToastDeletarCategoria'));
             const errorToast = new bootstrap.Toast(document.getElementById('errorToastDeletarCategoria'));
             try {
-                const response = await fetch(`http://localhost:3000/api/v1/categorias/${id}`,
+                const response = await fetch(`http://localhost:3000/api/v1/categories/${id}`,
                     {
                         method: 'DELETE'
                     }
@@ -163,13 +163,13 @@ class GerenciarCategoriaView extends View {
             const successToast = new bootstrap.Toast(document.getElementById('successToastAtualizarCategoria'));
             const errorToast = new bootstrap.Toast(document.getElementById('errorToastAtualizarCategoria'));
             try {
-                const response = await fetch(`http://localhost:3000/api/v1/categorias/${id}`,
+                const response = await fetch(`http://localhost:3000/api/v1/categories/${id}`,
                     {
                         method: 'PUT',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             id: id,
-                            nome: nome
+                            name: nome
                         })
                     }
                 );
@@ -206,11 +206,11 @@ class GerenciarCategoriaView extends View {
         const categoriaForm = new FormData(event.target);
         const nome = categoriaForm.get('nome');
 
-        const response = await fetch('http://localhost:3000/api/v1/categorias', {
+        const response = await fetch('http://localhost:3000/api/v1/categories', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                nome: nome
+                name: nome
             })
         });
         const data = await response.json();

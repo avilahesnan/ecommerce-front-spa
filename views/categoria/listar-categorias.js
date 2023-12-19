@@ -26,7 +26,7 @@ class ListarCategoriasView extends View {
 
     //Template do Badge Categoria
     const templateBadgeCategoria = (categoria) => {
-      return `<h2><span class="badge bg-primary rounded-pill me-2">${categoria.nome}</span></h2>`
+      return `<h2><span class="badge bg-primary rounded-pill me-2">${categoria.name}</span></h2>`
     };
 
     //Repetição através das categorias recuperadas
@@ -55,7 +55,7 @@ class ListarCategoriasView extends View {
     const successToast = new bootstrap.Toast(document.getElementById('successToastCategoria'));
     const errorToast = new bootstrap.Toast(document.getElementById('errorToastCategoria'));
     try {
-      const response = await fetch('http://localhost:3000/api/v1/categorias');
+      const response = await fetch('http://localhost:3000/api/v1/categories');
 
       if (!response.ok) {
         console.log(response);

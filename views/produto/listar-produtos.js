@@ -29,18 +29,18 @@ class ListarProdutosView extends View {
       let htmlBadgeProduto = '';
       //Repetição através das categorias recuperadas
       listaCategoriasProduto.forEach(categoriaProduto => {
-        htmlBadgeProduto = htmlBadgeProduto + `<span class="badge bg-primary rounded-pill me-1">${categoriaProduto.nome}</span>`
+        htmlBadgeProduto = htmlBadgeProduto + `<span class="badge bg-primary rounded-pill me-1">${categoriaProduto.name}</span>`
       });
       return htmlBadgeProduto;
     };
 
     //Template do Cards Produtos
     const templateCardsProdutos = (produto) => {
-      const htmlBadgeProduto = templateBadgesCategoriasProdutos(produto.categorias);
+      const htmlBadgeProduto = templateBadgesCategoriasProdutos(produto.categories);
       return `<div class="col mb-5">
           <div class="card h-100">
               <div class="card-header">
-                <h5 class="fw-bolder">${produto.nome}</h5>
+                <h5 class="fw-bolder">${produto.name}</h5>
               </div> 
               <!-- Imagem do Produto -->
             
@@ -48,11 +48,11 @@ class ListarProdutosView extends View {
               <div class="card-body p-4">
                 <div class="text-center">
                   <!-- Descrição do Produto-->
-                  ${produto.descricao}
+                  ${produto.description}
                 </div>
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item"> R$ ${produto.valor} </li>
+                <li class="list-group-item"> R$ ${produto.value} </li>
                 <li class="list-group-item">
                   ${htmlBadgeProduto}
                 </li>
@@ -90,7 +90,7 @@ class ListarProdutosView extends View {
     const successToast = new bootstrap.Toast(document.getElementById('successToastProduto'));
     const errorToast = new bootstrap.Toast(document.getElementById('errorToastProduto'));
     try {
-      const response = await fetch('http://localhost:3000/api/v1/produtos');
+      const response = await fetch('http://localhost:3000/api/v1/products');
 
       if (!response.ok) {
         console.log(response);
